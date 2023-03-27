@@ -1,7 +1,5 @@
 package dao;
 
-public class UserDao {
-    public void add() {
-        System.out.println("add");
-    }
+public interface UserDao {
+    public void add();
 }

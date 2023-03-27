@@ -8,6 +8,10 @@
     <bean id="book" class="spring5.Book">
         <property name="author" value="Java"></property>
         <property name="name" value="chending"></property>
+        <property name="address">
+            <value><![CDATA[<<哈尔滨1>>]]></value>
+<!--            <null></null>-->
+        </property>
     </bean>
 
     <bean id="order" class="spring5.Order">
@@ -15,5 +19,5 @@
         <constructor-arg index="1" value="bb"/>
     </bean>
 
-    <bean id="book1" class="spring5.Book" p:name="cc" p:author="dd"></bean>
+    <!--    <bean id="book1" class="spring5.Book" p:name="cc" p:author="dd"></bean>-->
 </beans>

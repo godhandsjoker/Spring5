@@ -1,16 +1,23 @@
 package service;
 
 import dao.UserDao;
+import dao.UserDaoImp;
 
 public class UserService {
-    public void execute() {
-        UserDao userDao = UserFactory.createDao();
+    private UserDao userDao;
+
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
     }
-}
 
+    public void execute() {
+        userDao.add();
+    }
 
-class UserFactory {
-    public static UserDao createDao() {
-        return new UserDao();
+    @Override
+    public String toString() {
+        return "UserService{" +
+                "userDao=" + userDao +
+                '}';
     }
 }

@@ -2,7 +2,9 @@ import org.junit.Test;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import service.UserService;
 import spring5.Book;
+import spring5.Emp;
 import spring5.Order;
 import spring5.User;
 
@@ -34,5 +36,20 @@ public class MyTest {
         ApplicationContext context = new ClassPathXmlApplicationContext("bean1.xml");
         Book book1 = context.getBean("book1", Book.class);
         System.out.println(book1);
+    }
+
+    @Test
+    public void Test5() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("bean2.xml");
+        UserService userService = (UserService) context.getBean("userService");
+        userService.execute();
+        System.out.println(userService);
+    }
+
+    @Test
+    public void Test6() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("bean2.xml");
+        Emp emp = context.getBean("emp", Emp.class);
+        System.out.println(emp);
     }
 }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--    <bean id="userService" class="service.UserService">-->
+    <!--        <property name="userDao" ref="userDao"></property>-->
+    <!--    </bean>-->
+
+    <!--    <bean id="userDao" class="dao.UserDaoImp"></bean>-->
+
+    <bean id="emp" class="spring5.Emp">
+        <property name="ename" value="Jerry"></property>
+        <property name="gender" value="man"></property>
+        <property name="dept" ref="dept"></property>
+        <property name="dept.dname" value="yy"></property>
+    </bean>
+
+    <bean id="dept" class="spring5.Dept">
+<!--        <property name="dname" value="Jack"></property>-->
+    </bean>
+
+</beans>
