@@ -3,10 +3,7 @@ import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import service.UserService;
-import spring5.Book;
-import spring5.Emp;
-import spring5.Order;
-import spring5.User;
+import spring5.*;
 
 public class MyTest {
     @Test
@@ -19,9 +16,11 @@ public class MyTest {
 
     @Test
     public void Test2() {
-        ApplicationContext context = new ClassPathXmlApplicationContext("bean1.xml");
-        Book book = context.getBean("book", Book.class);
-        System.out.println(book);
+        ApplicationContext context = new ClassPathXmlApplicationContext("bean3.xml");
+        Book book1 = context.getBean("book", Book.class);
+        Book book2 = context.getBean("book", Book.class);
+        System.out.println(book1);
+        System.out.println(book2);
     }
 
     @Test
@@ -51,5 +50,19 @@ public class MyTest {
         ApplicationContext context = new ClassPathXmlApplicationContext("bean2.xml");
         Emp emp = context.getBean("emp", Emp.class);
         System.out.println(emp);
+    }
+
+    @Test
+    public void Test7() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("bean3.xml");
+        Stu stu = context.getBean("stu", Stu.class);
+        System.out.println(stu);
+    }
+
+    @Test
+    public void Test8() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("bean3.xml");
+        Stu stu = context.getBean("stu", Stu.class);
+        System.out.println(stu);
     }
 }

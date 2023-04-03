@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+">
+
+    <bean id="stu" class="spring5.Stu">
+        <property name="strs">
+            <array>
+                <value>aa</value>
+                <value>bb</value>
+            </array>
+        </property>
+        <property name="list">
+            <list>
+                <value>list1</value>
+                <value>list2</value>
+            </list>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="map1" value="map1value"></entry>
+                <entry key="map2" value="mp"></entry>
+            </map>
+        </property>
+        <property name="set">
+            <set>
+                <value>hhhset</value>
+            </set>
+        </property>
+        <property name="courses">
+            <list>
+                <ref bean="c1"></ref>
+                <ref bean="c2"></ref>
+            </list>
+        </property>
+    </bean>
+    <bean id="c1" class="spring5.Course">
+        <property name="cname" value="xx"></property>
+    </bean>
+    <bean id="c2" class="spring5.Course">
+        <property name="cname" value="yy"></property>
+    </bean>
+
+    <bean id="book" class="spring5.Book" scope="prototype">
+        <property name="list" ref="books"></property>
+    </bean>
+
+    <util:list id="books">
+        <value>Java</value>
+        <value>DB</value>
+    </util:list>
+
+    <bean id="myBean" class="spring5.MyBean"></bean>
+
+</beans>
