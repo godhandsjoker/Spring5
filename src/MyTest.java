@@ -65,4 +65,19 @@ public class MyTest {
         Stu stu = context.getBean("stu", Stu.class);
         System.out.println(stu);
     }
+
+    @Test
+    public void Test9() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("bean4.xml");
+        Order order = context.getBean("order", Order.class);
+        System.out.println("4. get Bean");
+        ((ClassPathXmlApplicationContext) context).close();
+    }
+
+    @Test
+    public void Test10() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("bean4.xml");
+        Emp emp = context.getBean("emp", Emp.class);
+        System.out.println(emp);
+    }
 }

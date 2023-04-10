@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--    <bean id="order" class="spring5.Order" init-method="initMethod" destroy-method="destroyMethod">-->
+    <!--        <property name="name" value="chending"></property>-->
+    <!--    </bean>-->
+
+    <!--    <bean id="emp" class="spring5.Emp">-->
+    <!--        <property name="ename" value="Jerry"></property>-->
+    <!--        <property name="gender" value="man"></property>-->
+    <!--    </bean>-->
+
+    <!--    <bean id="MyBeanPost" class="spring5.MyBeanPost"></bean>-->
+    <bean id="emp" class="spring5.Emp" autowire="byType">
+    </bean>
+
+    <bean id="hhh" class="spring5.Dept">
+    </bean>
+</beans>
