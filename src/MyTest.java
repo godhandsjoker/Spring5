@@ -1,6 +1,8 @@
+import config.SpringConfig;
 import org.junit.Test;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import service.UserService;
 import spring5.*;
@@ -41,7 +43,7 @@ public class MyTest {
     public void Test5() {
         ApplicationContext context = new ClassPathXmlApplicationContext("bean2.xml");
         UserService userService = (UserService) context.getBean("userService");
-        userService.execute();
+//        userService.execute();
         System.out.println(userService);
     }
 
@@ -79,5 +81,19 @@ public class MyTest {
         ApplicationContext context = new ClassPathXmlApplicationContext("bean4.xml");
         Emp emp = context.getBean("emp", Emp.class);
         System.out.println(emp);
+    }
+
+    @Test
+    public void Test11() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("bean6.xml");
+        UserService userService = context.getBean("userService", UserService.class);
+        userService.fun();
+    }
+
+    @Test
+    public void Test12() {
+        ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+        UserService userService = context.getBean("userService", UserService.class);
+        userService.fun();
     }
 }
