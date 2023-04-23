@@ -13,3 +13,7 @@ git clone git@github.com:godhandsjoker/Spring5.git
 把lib文件夹下的所有jar文件进行一个模块导入，同时引入idea的junt4的jar包进行操作
 
 接下来我们可以进行运行以及测试
+
+## JDK
+
+这里的JDK建议使用我们的idea自动下载的1.8版本的JDK，jar包均使用项目lib下的jar包，同时导入idea软件目录下的lib中的junt4.jar的测试用包
