@@ -1,26 +1,38 @@
 package service;
 
 import dao.UserDao;
-import dao.UserDaoImp;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
+import entity.User;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Indexed;
 
 import javax.annotation.Resource;
+import java.util.List;
 
-@Component(value = "userService")
+@Component
 public class UserService {
-    @Resource(name = "userDaoImp")
+    @Resource
     private UserDao userDao;
 
-    @Value(value = "aaa")
-    private String str;
+    public void addUser(User user) {
+        userDao.add(user);
+    }
 
-    public void fun() {
-        System.out.println(str);
-        userDao.add();
-        System.out.println("UserService fun");
+    public void update(User user) {
+        userDao.update(user);
+    }
+
+    public void delete(String id) {
+        userDao.delete(id);
+    }
+
+    public int findCount() {
+        return userDao.selectCount();
+    }
+
+    public User findUser(String id) {
+        return userDao.findUser(id);
+    }
+
+    public List<User> findAll() {
+        return userDao.findAllUser();
     }
 }
